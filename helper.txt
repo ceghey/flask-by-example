@@ -1,0 +1,13 @@
+$ git remote add pro git@heroku.com:YOUR_APP_NAME.git
+$ git remote add stage git@heroku.com:YOUR_APP_NAME.git
+
+
+
+git remote add pro https://git.heroku.com/ceghey-wordcount-pro.git
+git remote add stage https://git.heroku.com/ceghey-wordcount-stage.git
+
+git push pro master
+git push stage master
+
+проверка
+https://ceghey-wordcount-pro.herokuapp.com/
