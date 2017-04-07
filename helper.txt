@@ -2,12 +2,37 @@ $ git remote add pro git@heroku.com:YOUR_APP_NAME.git
 $ git remote add stage git@heroku.com:YOUR_APP_NAME.git
 
 
+heroku create ceghey-wordcount-stage
 
+
+git remote add github https://github.com/ceghey/flask-by-example.git
 git remote add pro https://git.heroku.com/ceghey-wordcount-pro.git
 git remote add stage https://git.heroku.com/ceghey-wordcount-stage.git
 
 git push pro master
 git push stage master
-
+git push -u github master
 проверка
 https://ceghey-wordcount-pro.herokuapp.com/
+
+
+git push pro master
+git push stage master
+git push github master
+
+
+heroku run python app.py --app ceghey-wordcount-stage
+
+heroku config --app ceghey-wordcount-stage
+
+heroku addons:create heroku-postgresql:hobby-dev --app ceghey-wordcount-stage
+
+heroku run python manage.py db upgrade --app ceghey-wordcount-stage
+
+heroku addons:create heroku-postgresql:hobby-dev --app ceghey-wordcount-pro
+
+heroku run python manage.py db upgrade --app ceghey-wordcount-pro
+
+
+
+http://localhost:5000/results/1960cff0-51cf-463b-96eb-ac80db17e798
